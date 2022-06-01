@@ -19,12 +19,27 @@ const dataBelanjaan = [
     kuantitas: 8,
   },
 ];
+const dataBelanja = dataBelanjaan;  
+// boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
+const listBelanjaan = (dataBelanjaan) =>{
+  let listBarangBelanja =[];
+  for(const listBarang of dataBelanjaan)
+  {
+    listBarangBelanja.push("- "+ listBarang.nama +" x " + listBarang.kuantitas);
+  //  listBarangBelanja.push(`${ listBarang.nama, listBarang.kuantitas }`)    
+  }
+  return listBarangBelanja;
+}
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
-
-// boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = (dataBelanjaan) =>{
+  let totalBelanja =0;
+  for(let jmlBelanja of dataBelanjaan)
+  {
+    totalBelanja += jmlBelanja.harga *jmlBelanja.kuantitas;
+  }
+  return totalBelanja;
+}
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
